@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
 import Image from 'next/image';
 import {
   FaHeart,
@@ -306,8 +305,6 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 };

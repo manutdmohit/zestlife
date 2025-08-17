@@ -341,7 +341,7 @@ const Header: React.FC = () => {
                     height={40}
                     src="/assets/logo-removebg.png"
                     alt="Zest Life Disability"
-                    className="h-8 w-auto filter brightness-0"
+                    className="h-8 w-auto"
                     priority
                   />
                 </div>
@@ -354,11 +354,11 @@ const Header: React.FC = () => {
               </div>
 
               {/* Navigation Links */}
-              <div className="flex-1 overflow-y-auto py-6 min-h-0 bg-white">
+              <div className="flex-1 overflow-y-auto py-6 min-h-0 bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 text-white">
                 <nav className="space-y-2 px-6">
                   <Link
                     href="/"
-                    className="flex items-center py-4 px-4 text-gray-800 hover:text-primary-600 hover:bg-gray-100 rounded-xl transition-all duration-200 font-medium"
+                    className="flex items-center py-4 px-4  hover:text-primary-600 hover:bg-gray-100 rounded-xl transition-all duration-200 font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <span className="text-lg">Home</span>
@@ -366,7 +366,7 @@ const Header: React.FC = () => {
 
                   <div className="space-y-2">
                     <button
-                      className="flex items-center justify-between w-full py-4 px-4 text-gray-800 hover:text-primary-600 hover:bg-gray-100 rounded-xl transition-all duration-200 font-medium"
+                      className="flex items-center justify-between w-full py-4 px-4 hover:text-primary-600 hover:bg-gray-100 rounded-xl transition-all duration-200 font-medium"
                       onClick={toggleServicesSubMenu}
                     >
                       <span className="text-lg">Services</span>
@@ -384,7 +384,7 @@ const Header: React.FC = () => {
 
                   <Link
                     href="/about-us"
-                    className="flex items-center py-4 px-4 text-gray-800 hover:text-primary-600 hover:bg-gray-100 rounded-xl transition-all duration-200 font-medium"
+                    className="flex items-center py-4 px-4 hover:text-primary-600 hover:bg-gray-100 rounded-xl transition-all duration-200 font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <span className="text-lg">About Us</span>
@@ -392,7 +392,7 @@ const Header: React.FC = () => {
 
                   <Link
                     href="/contact-us"
-                    className="flex items-center py-4 px-4 text-gray-800 hover:text-primary-600 hover:bg-gray-100 rounded-xl transition-all duration-200 font-medium"
+                    className="flex items-center py-4 px-4 hover:text-primary-600 hover:bg-gray-100 rounded-xl transition-all duration-200 font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <span className="text-lg">Contact</span>
