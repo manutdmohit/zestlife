@@ -310,23 +310,30 @@ const Header: React.FC = () => {
 
         {/* Mobile Navigation */}
         <div
-          className={`lg:hidden fixed inset-0 z-40 transition-all duration-300 ${
+          className={`lg:hidden fixed inset-0 z-[60] transition-all duration-300 ${
             isMobileMenuOpen
               ? 'opacity-100 visible'
               : 'opacity-0 invisible pointer-events-none'
           }`}
+          style={{ display: isMobileMenuOpen ? 'block' : 'none' }}
         >
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm z-[65]"
             onClick={() => setIsMobileMenuOpen(false)}
           />
 
           {/* Mobile Menu Panel */}
           <div
-            className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${
+            className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-[70] ${
               isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
             }`}
+            style={{
+              transform: isMobileMenuOpen
+                ? 'translateX(0)'
+                : 'translateX(100%)',
+              visibility: isMobileMenuOpen ? 'visible' : 'hidden',
+            }}
           >
             <div className="flex flex-col h-full">
               {/* Header */}
