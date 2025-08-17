@@ -211,6 +211,7 @@ const Header: React.FC = () => {
                   alt="Zest Life Disability"
                   sizes="(max-width: 430px) 50vw, 430px"
                   className="h-12 w-auto transition-all duration-300 drop-shadow-lg group-hover:scale-105"
+                  priority
                 />
               </div>
             </Link>
@@ -319,7 +320,7 @@ const Header: React.FC = () => {
         >
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[65]"
             onClick={() => setIsMobileMenuOpen(false)}
           />
 
@@ -328,6 +329,8 @@ const Header: React.FC = () => {
             className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-[70] ${
               isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
             }`}
+            onClick={(e) => e.stopPropagation()}
+            style={{ maxWidth: '320px' }}
           >
             <div className="flex flex-col h-full min-h-screen">
               {/* Header */}
@@ -339,6 +342,7 @@ const Header: React.FC = () => {
                     src="/assets/logo-removebg.png"
                     alt="Zest Life Disability"
                     className="h-8 w-auto filter brightness-0"
+                    priority
                   />
                 </div>
                 <button
@@ -394,18 +398,6 @@ const Header: React.FC = () => {
                     <span className="text-lg">Contact</span>
                   </Link>
                 </nav>
-              </div>
-
-              {/* Footer */}
-              <div className="p-6 border-t border-gray-200 bg-gray-50">
-                <Link
-                  href="/contact-us"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <button className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 hover:from-primary-700 hover:to-secondary-700 transform hover:scale-105 text-lg">
-                    Get Started Today
-                  </button>
-                </Link>
               </div>
             </div>
           </div>
