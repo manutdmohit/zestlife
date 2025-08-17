@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Add this CSS to your existing stylesheet or style tag */
+.navbar-brand img {
+  max-width: 100%;
+  height: auto;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav .nav-link {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-nav .nav-link {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-nav .nav-link {
+    font-size: 1.6rem;
+  }
+}
+
+.sub-menu .menu-item a {
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .sub-menu .menu-item a {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .sub-menu .menu-item a {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sub-menu .menu-item a {
+    font-size: 1.3rem;
+  }
+}
+
+.sub-menu {
+  width: 100%;
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+.menu-item {
+  width: auto; /* Allow items to expand based on content */
+  margin-top: 5px;
+  margin-right: 10px; /* Add spacing between items */
+}
+
+ul {
+  list-style: none;
+}
+
+/* Custom link styles - only apply to specific elements if needed */
+.custom-link {
+  text-decoration: none;
+  list-style-type: none;
+  letter-spacing: 0.08rem;
+  font-size: 1.8rem;
+  color: limegreen;
+}
+
+.custom-link:hover {
+  color: rgb(187, 190, 32);
+}
+
+.bg-video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* If using CSS module */
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(255, 255, 255, 0.199);  */
+}
+
+.intro p {
+  /* font-weight: bold; */
+  letter-spacing: 0.08rem;
+}
+
+button.navbar-toggler {
+  background-color: green !important;
+}
+
+.why-us-section {
+  margin-top: 50px;
+  background-color: #f8fcff;
+  padding: 45px;
+}
+
+.why-us-section p,
+.service {
+  letter-spacing: 0.08rem !important;
+}
+
+.second-image {
+  top: -40px !important;
+  left: 10px !important;
+}
+
+.why-us-section h3,
+.ndis-provider h2 {
+  font-weight: bold;
+}
+
+.ndis-container {
+  padding: 45px;
+  background: #fff1df52;
+}
+
+/* Contact Us Container */
+.contact-us-container {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+/* Contact Heading */
+.contact-heading {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Contact Description */
+.contact-description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Contact Details */
+.contact-details {
+  margin-bottom: 30px;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.contact-detail i {
+  font-size: 24px;
+  color: #007bff;
+  margin-right: 15px;
+}
+
+.contact-detail h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.contact-detail p {
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Contact Form */
+.contact-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  border-radius: 0;
+  height: 50px;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: none;
+}
+
+textarea.form-control {
+  height: auto;
+}
+
+/* Legacy button styles - keeping for backward compatibility if needed */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.services-submenu {
+  background-color: ghostwhite;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 5px;
+  min-width: 250px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+.services-submenu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.sub-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  margin-bottom: 10px;
+}
+
+.submenu-link {
+  display: block;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.submenu-link:hover {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+@media (max-width: 767px) {
+  .bg-image {
+    height: auto;
+    padding: 100px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .images-section {
+    margin-top: 50px !important;
+  }
+}
+
+@media (max-width: 625px) {
+  .services-submenu {
+    padding: 5px;
+  }
+
+  .sub-menu -menu-item {
+    font-size: 1rem;
+  }
+
+  .submenu-link {
+    font-size: 18px !important;
+  }
+}
