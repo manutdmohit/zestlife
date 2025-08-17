@@ -146,6 +146,7 @@ const Header: React.FC = () => {
   }, []);
 
   const toggleMobileMenu = () => {
+    console.log('Mobile menu toggled:', !isMobileMenuOpen);
     setIsMobileMenuOpen(!isMobileMenuOpen);
     setShowServicesSubMenu(false);
   };
@@ -315,29 +316,22 @@ const Header: React.FC = () => {
               ? 'opacity-100 visible'
               : 'opacity-0 invisible pointer-events-none'
           }`}
-          style={{ display: isMobileMenuOpen ? 'block' : 'none' }}
         >
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm z-[65]"
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setIsMobileMenuOpen(false)}
           />
 
           {/* Mobile Menu Panel */}
           <div
-            className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-[70] ${
+            className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-[70] ${
               isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
             }`}
-            style={{
-              transform: isMobileMenuOpen
-                ? 'translateX(0)'
-                : 'translateX(100%)',
-              visibility: isMobileMenuOpen ? 'visible' : 'hidden',
-            }}
           >
-            <div className="flex flex-col h-full">
+            <div className="flex flex-col h-full min-h-screen">
               {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-100">
+              <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-gray-100">
                 <div className="flex items-center gap-3">
                   <Image
                     width={120}
@@ -356,11 +350,11 @@ const Header: React.FC = () => {
               </div>
 
               {/* Navigation Links */}
-              <div className="flex-1 overflow-y-auto py-6">
+              <div className="flex-1 overflow-y-auto py-6 min-h-0 bg-white">
                 <nav className="space-y-2 px-6">
                   <Link
                     href="/"
-                    className="flex items-center py-4 px-4 text-gray-800 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-all duration-200 font-medium"
+                    className="flex items-center py-4 px-4 text-gray-800 hover:text-primary-600 hover:bg-gray-100 rounded-xl transition-all duration-200 font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <span className="text-lg">Home</span>
@@ -368,7 +362,7 @@ const Header: React.FC = () => {
 
                   <div className="space-y-2">
                     <button
-                      className="flex items-center justify-between w-full py-4 px-4 text-gray-800 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-all duration-200 font-medium"
+                      className="flex items-center justify-between w-full py-4 px-4 text-gray-800 hover:text-primary-600 hover:bg-gray-100 rounded-xl transition-all duration-200 font-medium"
                       onClick={toggleServicesSubMenu}
                     >
                       <span className="text-lg">Services</span>
@@ -386,7 +380,7 @@ const Header: React.FC = () => {
 
                   <Link
                     href="/about-us"
-                    className="flex items-center py-4 px-4 text-gray-800 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-all duration-200 font-medium"
+                    className="flex items-center py-4 px-4 text-gray-800 hover:text-primary-600 hover:bg-gray-100 rounded-xl transition-all duration-200 font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <span className="text-lg">About Us</span>
@@ -394,7 +388,7 @@ const Header: React.FC = () => {
 
                   <Link
                     href="/contact-us"
-                    className="flex items-center py-4 px-4 text-gray-800 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-all duration-200 font-medium"
+                    className="flex items-center py-4 px-4 text-gray-800 hover:text-primary-600 hover:bg-gray-100 rounded-xl transition-all duration-200 font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <span className="text-lg">Contact</span>
@@ -403,7 +397,7 @@ const Header: React.FC = () => {
               </div>
 
               {/* Footer */}
-              <div className="p-6 border-t border-gray-100">
+              <div className="p-6 border-t border-gray-200 bg-gray-50">
                 <Link
                   href="/contact-us"
                   onClick={() => setIsMobileMenuOpen(false)}
